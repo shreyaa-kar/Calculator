@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <h1 class="app-title">CALCULATOR</h1>
+    
+    <div class="calculator-container">
+        <p class="brand-name">CASIO</p>
+
+        <input class="calculator-screen"   id="input"/>
+
+        <div class="butttons-container">
+            
+            <button class="btn" onclick="pressKey(7)">7</button>
+            <button class="btn" onclick="pressKey(8)">8</button>
+            <button class="btn" onclick="pressKey(9)">9</button>
+            <button class="btn btn-special" onclick="pressKey('%')">%</button>
+
+            <button class="btn"  onclick="pressKey(4)">4</button>
+            <button class="btn"  onclick="pressKey(5)">5</button>
+            <button class="btn"  onclick="pressKey(6)">6</button>
+            <button class="btn btn-special" onclick="pressKey('*')">*</button>
+
+            <button class="btn"  onclick="pressKey(1)">1</button>
+            <button class="btn"  onclick="pressKey(2)">2</button>
+            <button class="btn"  onclick="pressKey(3)">3</button>
+            <button class="btn btn-special" onclick="pressKey('-')">-</button>
+            
+
+            <button class="btn" onclick="pressKey(0)">0</button>
+            <button class="btn btn-special"  onclick="pressKey('/')">/</button>
+            <button class="btn btn-special" onclick="calculate()">=</button>
+            <button class="btn btn-special"  onclick="pressKey('+')">+</button>
+
+        </div>
+        </div>
+
+        <script>
+
+            function pressKey(keyValue){
+                const screenElement = document.getElementById("input");
+                screenElement.value = screenElement.value + keyValue;
+            }
+
+            function calculate(){
+                const screenElement = document.getElementById("input");
+                screenElement.value = eval( screenElement.value);
+            }
+
+            
+        </script>
+    
+</body>
+</html>
